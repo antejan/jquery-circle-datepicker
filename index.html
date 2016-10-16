@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf8"/>
+	<title>Jquery Circle Timepicker</title>
+	<style>
+		body {
+			font: 20px/30px arial, sans-serif;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+
+<h1>Jquery Circle Timepicker</h1>
+
+<svg width="300" height="300" class="circle-datepicker">
+  <circle cx="150" cy="150" r="100" stroke="#ddd" fill="none" stroke-width="24" />
+  <path
+    class="circle-datepicker__path"
+    stroke-linecap="round"
+    stroke="#666"
+    stroke-width="24"
+    fill="none"
+    d=""
+/>
+  <circle class="circle-datepicker__start" cx="150" cy="150" r="12" fill="#000" />
+  <circle class="circle-datepicker__end" cx="150" cy="150" r="12" fill="#000" />
+</svg>
+
+<p></p>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="jquery-circle-datepicker.js"></script>
+<script>
+$(function(){
+
+	$('.circle-datepicker').circle_datepicker({
+	});
+
+	$('.circle-datepicker').on('change', function(e, data){
+		$('p').html('start: ' + data[0] + '<br>end: ' + data[1]);
+	});
+
+});
+</script>
+
+</body>
+</html>
